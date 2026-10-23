@@ -47,7 +47,10 @@ public class Calculator {
             return num1 * num2;
         }
         if (mode.equals(BiOperatorModes.divide)) {
-            return num1 / num2; //may return infinity
+            if (num2 ==0) {
+                return NaN; //division by zero is undefined
+            }
+            return num1 / num2; //divisor is non-zero
         }
         if (mode.equals(BiOperatorModes.xpowerofy)) {
             return pow(num1,num2);
